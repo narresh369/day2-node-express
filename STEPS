@@ -1,0 +1,17 @@
+npm install express
+npm install cors
+
+npm install express cors
+npm run dev
+
+---
+
+nodemon index.js
+nodemon index-basic.js
+nodemon index-more-endpoints.js
+nodemon index-TasksAPI.js
+
+---
+
+you can remove "type": "module", from package.json
+and rename index.js to index.mjs if you want to use ES modules syntax.

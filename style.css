@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 10px;
+    color: #34495e;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: calc(100% - 30px);
+    font-size: 14px;
+    transition: border 0.2s;
+}
+
+input:focus {
+    border-color: #3498db;
+}
+
+button {
+    padding: 10px 16px;
+    margin: 8px 0;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #ecf0f1;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.task-actions button {
+    background: #e74c3c;
+    margin-left: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.task-actions button:hover {
+    background: #c0392b;
+}

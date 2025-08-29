@@ -1,0 +1,68 @@
+---
+
+ 1️⃣ Install nodemon (dev dependency)
+
+```sh
+npm install --save-dev nodemon
+```
+
+---
+
+ 2️⃣ Add `"type": "module"` in `package.json`
+
+This ensures you can use ES6 `import` instead of `require`.
+
+```json
+{
+  "name": "my-express-app",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
+```
+
+---
+
+ 3️⃣ ES6 version of your server
+
+server.js
+
+```js
+import express from "express";
+
+const app = express();
+const PORT = 3000;
+
+// Middleware to parse JSON
+app.use(express.json());
+
+// Simple middleware example (logs each request)
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next(); // move to next handler
+});
+
+// Basic route
+app.get("/", (req, res) => {
+  res.send("Welcome to Day 2: Node.js + Express!");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+```
+
+---
+
+ 4️⃣ Run your app in dev mode with nodemon
+
+```sh
+npm run dev
+```
+

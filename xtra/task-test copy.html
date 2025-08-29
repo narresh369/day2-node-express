@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task API Test</title>
+</head>
+<body>
+  <h1>Task API Tester</h1>
+
+  <!-- Simple form to add a task -->
+  <input type="text" id="taskInput" placeholder="Enter task title" />
+  <button onclick="submitTask()">Add Task</button>
+
+  <script>
+    async function addTask(title) {
+      try {
+        const response = await fetch("http://localhost:5000/tasks", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title })
+        });
+
+        if (response.status === 201) {
+          // ✅ Resource created successfully
+          const newTask = await response.json();
+          console.log("Task created:", newTask);
+          alert(`✅ Task created: ${newTask.title}`);
+        } else if (response.status === 400) {
+          // ❌ Bad request
+          const error = await response.json();
+          alert(`⚠️ Error: ${error.message}`);
+        } else {
+          // Other errors
+          alert(`Unexpected error: ${response.status}`);
+        }
+      } catch (err) {
+        console.error("Network error:", err);
+        alert("🚨 Server unreachable!");
+      }
+    }
+
+    // Form handler
+    function submitTask() {
+      const title = document.getElementById("taskInput").value;
+	  
+      if (title.trim() === "") {
+        alert("⚠️ Please enter a task title");
+        return;
+      }
+	  
+      addTask(title);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task API Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>📝 Task API Tester</h1>
+
+  <div class="card">
+    <h3>Add Task</h3>
+    <input type="text" id="taskInput" placeholder="Enter task title" />
+    <button onclick="submitTask()">Add Task</button>
+  </div>
+
+  <div class="card">
+    <h3>All Tasks</h3>
+    <button onclick="getAllTasks()">🔄 Refresh List</button>
+    <div id="allTasks"></div>
+  </div>
+
+  <div class="card">
+    <h3>Get Task by ID</h3>
+    <input type="number" id="taskIdInput" placeholder="Enter task ID" />
+    <button onclick="getTaskById()">Get Task</button>
+    <div id="taskById"></div>
+  </div>
+
+  <div class="card">
+    <h3>Update Task</h3>
+    <input type="number" id="updateId" placeholder="Task ID" />
+    <input type="text" id="updateTitle" placeholder="New title" />
+    <button onclick="updateTask()">Update Task</button>
+    <div id="updateResult"></div>
+  </div>
+
+  <div class="card">
+    <h3>Delete Task</h3>
+    <input type="number" id="deleteId" placeholder="Task ID" />
+    <button onclick="deleteTask()">Delete Task</button>
+    <div id="deleteResult"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
